@@ -2,12 +2,12 @@ DROP TABLE IF EXISTS genders;
 DROP TABLE IF EXISTS employees;
 
 CREATE TABLE genders (
-    id SERIAL PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     gender VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE employees (
-    employee_id SERIAL PRIMARY KEY,
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(250) NOT NULL,
     last_name VARCHAR(250) NOT NULL,
     department_id INTEGER NOT NULL,
