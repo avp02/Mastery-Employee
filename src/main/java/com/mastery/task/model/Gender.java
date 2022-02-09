@@ -1,8 +1,5 @@
 package com.mastery.task.model;
 
-import lombok.Getter;
-
-@Getter
 public enum Gender {
 
     MALE(1),
@@ -14,7 +11,11 @@ public enum Gender {
         this.id = id;
     }
 
-    public static Gender getGenderById(int id) {
+    public int getId() {
+        return id;
+    }
+
+    public static Gender genderById(int id) {
         return id == 1 ? MALE : FEMALE;
     }
 

@@ -7,11 +7,11 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring")
 public interface EmployeeDtoMapper {
 
-    EmployeeDto mapToDto(Employee employee);
-    Employee mapToEntity(EmployeeDto dto);
+        EmployeeDto mapToDto(Employee employee);
+        Employee mapToEntity(EmployeeDto dto);
 
-    @BeanMapping(nullValuePropertyMappingStrategy =
-            NullValuePropertyMappingStrategy.IGNORE)
-    @Mapping(target = "id", ignore = true)
-    void update(EmployeeDto dto, @MappingTarget Employee employee);
+        @BeanMapping(nullValuePropertyMappingStrategy =
+                NullValuePropertyMappingStrategy.IGNORE)
+        @Mapping(target = "id", ignore = true)
+        void update(EmployeeDto dto, @MappingTarget Employee employee);
 }

@@ -1,8 +1,6 @@
 package com.mastery.task.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -12,11 +10,17 @@ import java.time.LocalDateTime;
 public class Employee {
 
     private Integer employeeId;
+
     private String firstName;
+
     private String lastName;
+
     private Integer departmentId;
+
     private String jobTitle;
+
     private Gender gender;
+
     private LocalDateTime dateOfBirth;
 
     public Employee setId(Integer employeeId) {
