@@ -9,11 +9,13 @@ public interface EmployeeService {
 
     Collection<EmployeeDto> findAll();
 
-    Optional<EmployeeDto> findById(Integer id);
+    EmployeeDto findById(Integer id);
 
     EmployeeDto save(EmployeeDto employeeDto);
 
     EmployeeDto update(Integer id, EmployeeDto employeeDto);
+
+    EmployeeDto partialUpdate(Integer id, EmployeeDto employeeDto);
 
     void delete(Integer id);
 }

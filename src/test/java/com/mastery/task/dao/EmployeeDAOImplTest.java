@@ -42,7 +42,9 @@ class EmployeeDAOImplTest {
     @Test
     @Order(1)
     void findAll() {
+
         log.info("Method findAll in class {}",getClass().getName());
+
         assertNotNull(employeeDAO);
         assertNotNull(employeeDAO.findAll());
     }
@@ -88,13 +90,12 @@ class EmployeeDAOImplTest {
     @Test
     @Order(5)
     void shouldSave() {
-//
-//        log.info("Method shouldSave in class {}",getClass().getName());
-//
+
+        log.info("Method shouldSave in class {}",getClass().getName());
+
 //        Employee expected = employeeDAO.save(employee);
 //        Employee actual = employeeDAO.findById(expected.getEmployeeId()).get();
 //
 //        assertEquals(expected, actual);
-
     }
 }

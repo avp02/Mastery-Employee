@@ -75,7 +75,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 //                .addValue("job_title", employee.getJobTitle())
 //                .addValue("gender_id", employee.getGender().getId())
 //                .addValue("date_of_birth", employee.getDateOfBirth());
-        HashMap<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<>();
         params.put("first_name", employee.getFirstName());
         params.put("last_name", employee.getLastName());
         params.put("department_id", employee.getDepartmentId());
