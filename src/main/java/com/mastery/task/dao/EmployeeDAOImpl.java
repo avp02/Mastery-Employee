@@ -11,10 +11,7 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Repository
 @Slf4j
@@ -27,7 +24,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
         this.jdbcTemplate = jdbcTemplate;
         this.jdbcInsert = new SimpleJdbcInsert(jdbcTemplate)
                 .withSchemaName("employeedb.public")
-                .withTableName("\"‘employee’ \"")
+                .withTableName("employee")
                 .usingColumns("first_name", "last_name", "department_id",
                         "job_title", "gender_id", "date_of_birth")
                 .usingGeneratedKeyColumns("employee_id");
@@ -83,15 +80,15 @@ public class EmployeeDAOImpl implements EmployeeDAO{
         params.put("gender_id", employee.getGender().getId());
         params.put("date_of_birth", employee.getDateOfBirth());
 
-        Number employeeId = jdbcInsert.executeAndReturnKey(params
+//        Number employeeId = jdbcInsert.executeAndReturnKey(
 //                Map.of("first_name", employee.getFirstName(),
 //                        "last_name", employee.getLastName(),
 //                        "department_id", employee.getDepartmentId(),
 //                        "job_title", employee.getJobTitle(),
 //                        "gender_id", employee.getGender().getId(),
 //                        "date_of_birth", employee.getDateOfBirth())
-        );
-//        Number employeeId = jdbcInsert.executeAndReturnKey(params);
+//        );
+        Number employeeId = jdbcInsert.executeAndReturnKey(params);
 
         return employee.setId(employeeId.intValue());
     }

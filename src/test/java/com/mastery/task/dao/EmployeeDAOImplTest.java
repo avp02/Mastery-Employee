@@ -15,7 +15,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 import static com.mastery.task.model.Gender.MALE;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -43,7 +42,7 @@ class EmployeeDAOImplTest {
     @Order(1)
     void findAll() {
 
-        log.info("Method findAll in class {}",getClass().getName());
+        log.info("Method findAll in class {}", getClass().getName());
 
         assertNotNull(employeeDAO);
         assertNotNull(employeeDAO.findAll());
@@ -52,7 +51,7 @@ class EmployeeDAOImplTest {
     @Test
     @Order(2)
     void shouldFindById() {
-        log.info("Method shouldFindById in class {}",getClass().getName());
+        log.info("Method shouldFindById in class {}", getClass().getName());
 
         Optional<Employee> expected = Optional.of(employee);
 
@@ -65,7 +64,7 @@ class EmployeeDAOImplTest {
     @Order(3)
     void shouldUpdate() {
 
-        log.info("Method shouldUpdate in class {}",getClass().getName());
+        log.info("Method shouldUpdate in class {}", getClass().getName());
 
         employee.setFirstName("test");
 
@@ -79,7 +78,7 @@ class EmployeeDAOImplTest {
     @Order(4)
     void shouldDelete() {
 
-        log.info("Method shouldDelete in class {}",getClass().getName());
+        log.info("Method shouldDelete in class {}", getClass().getName());
 
         employeeDAO.delete(1);
 
@@ -91,11 +90,11 @@ class EmployeeDAOImplTest {
     @Order(5)
     void shouldSave() {
 
-        log.info("Method shouldSave in class {}",getClass().getName());
+        log.info("Method shouldSave in class {}", getClass().getName());
 
-//        Employee expected = employeeDAO.save(employee);
-//        Employee actual = employeeDAO.findById(expected.getEmployeeId()).get();
-//
-//        assertEquals(expected, actual);
+        Employee actual = employeeDAO.save(employee);
+        Employee expected = employeeDAO.findById(employee.getEmployeeId()).get();
+
+        assertEquals(expected, actual);
     }
 }
