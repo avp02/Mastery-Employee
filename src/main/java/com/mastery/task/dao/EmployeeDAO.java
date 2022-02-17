@@ -1,7 +1,6 @@
 package com.mastery.task.dao;
 
 import com.mastery.task.model.Employee;
-import com.mastery.task.model.dto.EmployeeDto;
 
 import java.util.Collection;
 import java.util.Optional;
