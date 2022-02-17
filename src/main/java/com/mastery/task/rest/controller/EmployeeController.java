@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.Collection;
 
@@ -33,7 +33,7 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public ResponseEntity<EmployeeDto> save(@RequestBody EmployeeDto employeeDto) {
+    public ResponseEntity<EmployeeDto> save(@RequestBody @Valid EmployeeDto employeeDto) {
 
         EmployeeDto employeeDtoReturn = employeeService.save(employeeDto);
 
@@ -47,12 +47,14 @@ public class EmployeeController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<EmployeeDto> update(@PathVariable("id") Integer id, @RequestBody EmployeeDto employeeDto) {
+    public ResponseEntity<EmployeeDto> update(@PathVariable("id") Integer id,
+                                              @RequestBody @Valid EmployeeDto employeeDto) {
         return ResponseEntity.ok(employeeService.update(id, employeeDto));
     }
 
     @PatchMapping(value = "/{id}")
-    public ResponseEntity<EmployeeDto> partialUpdate(@PathVariable("id") Integer id, @RequestBody EmployeeDto employeeDto) {
+    public ResponseEntity<EmployeeDto> partialUpdate(@PathVariable("id") Integer id,
+                                                     @RequestBody @Valid EmployeeDto employeeDto) {
         return ResponseEntity.ok(employeeService.partialUpdate(id, employeeDto));
     }
 
@@ -61,5 +63,4 @@ public class EmployeeController {
     public void delete(@PathVariable("id") Integer id) {
         employeeService.delete(id);
     }
-
 }

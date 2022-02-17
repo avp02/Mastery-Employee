@@ -22,9 +22,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeDtoMapper mapper = new EmployeeDtoMapperImpl();
 
-    public EmployeeServiceImpl(EmployeeDAO employeeDAO, EmployeeDtoMapper mapper) {
+    public EmployeeServiceImpl(EmployeeDAO employeeDAO) {
         this.employeeDAO = employeeDAO;
-//        this.mapper = mapper;
     }
 
     @Override

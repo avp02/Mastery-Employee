@@ -3,7 +3,6 @@ package com.mastery.task.service;
 import com.mastery.task.model.dto.EmployeeDto;
 
 import java.util.Collection;
-import java.util.Optional;
 
 public interface EmployeeService {
 
