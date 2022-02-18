@@ -38,7 +38,6 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .collect(Collectors.toList());
     }
 
-
     @Override
     @Transactional(readOnly = true)
     public EmployeeDto findById(Integer id) {
